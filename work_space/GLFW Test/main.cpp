@@ -1,7 +1,12 @@
 
 #include <iostream>
 #include <GLFW/glfw3.h>
+#include <cmath>
+#include <vector>
 
+#ifdef _MAC_VER
+//#define _USE_MATH_DEFINES // VS:算術関連の定義を有効にする
+#endif
 
 struct Vec2f {
   float x;
@@ -10,36 +15,53 @@ struct Vec2f {
   Vec2f Zero() { return Vec2f(0.0f, 0.0f); }
 };
 
-struct Color {
+struct ColorA {
   float red;
   float green;
   float blue;
   float alpha;
-  Color(float red, float green, float blue, float alpha)
+  ColorA(float red, float green, float blue, float alpha)
     : red(red), green(green), blue(blue), alpha(alpha) {}
-  Color(float red, float green, float blue)
+  ColorA(float red, float green, float blue)
     : red(red), green(green), blue(blue), alpha(1.0f) {}
 };
 
-void drawPoint(const Vec2f& pos, const float& size, const Color& color) {
-  GLfloat vtx[] = { pos.x, pos.y };
+void draw(float angle) {
+  GLfloat vtx[2 * 2 * 3];
   
-  // 描画に使う頂点の配列をOpenGLに指定
+  for (int i = 0; i < 3 * 2; i++) {
+    if (i < 3) {
+      vtx[i * 2 + 0] = std::sin(i * 2 * M_PI / 3 + angle) * 100.0f - 100.0f;
+      vtx[i * 2 + 1] = std::cos(i * 2 * M_PI / 3 + angle) * 100.0f;
+    } else {
+      vtx[i * 2 + 0] = std::sin(i * 2 * M_PI / 3 + angle) * 100.0f + 100.0f;
+      vtx[i * 2 + 1] = std::cos(i * 2 * M_PI / 3 + angle) * 100.0f;
+    }
+  }
+  
   glVertexPointer(2, GL_FLOAT, 0, vtx);
+  glColor4f(1.0f, 0.6f, 0.0f, 1.0f);
   
-  // サイズ指定
-  glPointSize(size);
   
-  // 色指定
-  glColor4f(color.red, color.green, color.blue, color.alpha);
-  
-  // 頂点配列で描画するモードに切り替えて
-  // 点を描画
   glEnableClientState(GL_VERTEX_ARRAY);
-  glDrawArrays(GL_POINTS, 0, 1);
   
-  // 描画が終わったら描画モードを元に戻す
+  // OpenGLに三角形の描画を指定
+  glDrawArrays(GL_TRIANGLES, 0, 6);
+  
   glDisableClientState(GL_VERTEX_ARRAY);
+}
+
+enum WindowSize {
+  Width = 640,
+  Height = 480
+};
+
+void changeWindowSize(GLFWwindow* window,
+                      const int width, const int height)
+{
+  glViewport(0, 0, width, height);
+  glLoadIdentity();
+  glOrtho(-width * 0.5f, width * 0.5f, -height * 0.5f, height * 0.5f, -0.0f, 1.0f);
 }
 
 int main() {
@@ -51,7 +73,7 @@ int main() {
   }
   
   // Create a windowed mode window and its OpenGL
-  window = glfwCreateWindow(640, 480, "Hello World", NULL, NULL);
+  window = glfwCreateWindow(Width, Height, "Hello World", NULL, NULL);
   if (!window) {
     glfwTerminate();
     return -1;
@@ -60,10 +82,25 @@ int main() {
   // Make the window`s context current
   glfwMakeContextCurrent(window);
   
+  // Windowのサイズが変更されたときに呼び出す関数
+  glfwSetWindowSizeCallback(window, changeWindowSize);
+  
+  // 「ビューポート変換」を指定
+  // glViewport(X座標, Y座標, 幅, 高さ)
+  // 画面左下からの座標(x, y)から
+  // (幅 * 高さ)ピクセルの領域を描画領域とする
+  glViewport(0, 0, Width, Height);
+  
+  // 「投影行列」を操作対象にする
+  glMatrixMode(GL_PROJECTION);
+  glLoadIdentity();
+  
+  // 単位行列を作り、現在の行列に掛け合わせる
+  glOrtho(-Width * 0.5f, Width * 0.5f, -Height * 0.5f, Height * 0.5f, -0.0f, 1.0f);
+  
+  
   // Loop until the user closes the window
   while (!glfwWindowShouldClose(window)) {
-    // Render here
-    
     // 描画バッファを塗りつぶす色の成分を指定
     glClearColor(0.4f, 0.4f, 0.4f, 0.0f);
     
@@ -71,22 +108,10 @@ int main() {
     glClear(GL_COLOR_BUFFER_BIT);
     
     
-    // 点を丸くする
-    glEnable(GL_POINT_SMOOTH);
-    // alpha値を使用する
-    glEnable(GL_BLEND);
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_CONSTANT_ALPHA);
+    static float angle = 0.1;
+    angle += 0.01f;
     
-    Vec2f pos(0.0f, 0.0f);
-    float size = 10.0f;
-    Color color(1.0f, 0.6f, 0.0f, 1.0f);
-    drawPoint(pos, size, color);
-    
-    Vec2f pos2(0.4f, 0.0f);
-    drawPoint(pos2, 100, Color(0.0f, 1.0f, 0.0f));
-    
-    Vec2f pos3(-0.4f, 0.0f);
-    drawPoint(pos3, 20.0f, Color(1, 0, 0));
+    draw(angle);
     
     
     // Swap front and back buffers
