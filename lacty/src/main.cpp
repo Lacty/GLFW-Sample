@@ -12,5 +12,6 @@ using namespace lacty;
 int main() {
   Vec2f pos;
   pos.x = 10;
-  std::cout << pos.x << std::endl;
+  Vec2f size = pos;
+  std::cout << size.x << std::endl;
 }
