@@ -14,6 +14,22 @@ public:
   Vec2() : x(0), y(0) {}
   Vec2(T x, T y) : x(x), y(y) {}
   Vec2(const Vec2<T>& src) : x(src.x), y(src.y) {}
+  
+  Vec2<T>& operator+=(const Vec2<T>& rhs) {
+    x += rhs.x;
+    y += rhs.y;
+    return *this;
+  }
+  Vec2<T>& operator-=(const Vec2<T>& rhs) {
+    x -= rhs.x;
+    y -= rhs.y;
+    return *this;
+  }
+  Vec2<T>& operator*=(const Vec2<T>& rhs) {
+    x *= rhs.x;
+    y *= rhs.y;
+    return *this;
+  }
 };
 
 
@@ -25,6 +41,28 @@ public:
   Vec3() : x(0), y(0), z(0) {}
   Vec3(T x, T y, T z) : x(x), y(y), z(z) {}
   Vec3(const Vec3<T>& src) : x(src.x), y(src.y), z(src.z) {}
+  Vec3(const Vec2<T>& src) : x(src.x), y(src.y), z(0) {}
+  
+  Vec2<T> xy() const { return Vec2<T>(x, y); }
+  
+  Vec3<T>& operator+=(const Vec3<T>& rhs) {
+    x += rhs.x;
+    y += rhs.y;
+    z += rhs.z;
+    return *this;
+  }
+  Vec3<T>& operator-=(const Vec3<T>& rhs) {
+    x -= rhs.x;
+    y -= rhs.y;
+    z -= rhs.z;
+    return *this;
+  }
+  Vec3<T>& operator*=(const Vec3<T>& rhs) {
+    x *= rhs.x;
+    y *= rhs.y;
+    z *= rhs.z;
+    return *this;
+  }
 };
 
 typedef Vec2<int>    Vec2i;

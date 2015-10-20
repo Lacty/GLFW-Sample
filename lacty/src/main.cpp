@@ -10,8 +10,7 @@
 using namespace lacty;
 
 int main() {
-  Vec2f pos;
-  pos.x = 10;
-  Vec2f size = pos;
-  std::cout << size.x << std::endl;
+  Vec3f pos(1, 1, 1);
+  Vec2f p = pos.xy();
+  std::cout << p.x << std::endl;
 }
