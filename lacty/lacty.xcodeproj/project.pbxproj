@@ -36,6 +36,7 @@
 		ACBB14521BD5B7F900314536 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
 		ACBB14571BD5C39F00314536 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ACBB161C1BD5D81000314536 /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
+		ACBB161D1BD5DF0800314536 /* Namespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Namespace.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +88,7 @@
 		ACBB16171BD5C49F00314536 /* lacty */ = {
 			isa = PBXGroup;
 			children = (
+				ACBB161D1BD5DF0800314536 /* Namespace.h */,
 				ACBB161C1BD5D81000314536 /* Vector.hpp */,
 			);
 			name = lacty;
