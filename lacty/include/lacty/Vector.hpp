@@ -4,12 +4,17 @@
 
 namespace lacty {
 
-class Vec2f {
+template<typename T>
+class Vec2 {
 public:
-  GLfloat x, y;
+  T x, y;
   
-  Vec2f() : x(0), y(0) {}
-  Vec2f(GLfloat x, GLfloat y) : x(x), y(y) {}
+  Vec2() : x(0), y(0) {}
+  Vec2(T x, T y) : x(x), y(y) {}
 };
+
+typedef Vec2<int>    Vec2i;
+typedef Vec2<float>  Vec2f;
+typedef Vec2<double> Vec2d;
 
 }
