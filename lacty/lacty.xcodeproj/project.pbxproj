@@ -7,12 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		ACBB14441BD5B68000314536 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACBB14431BD5B68000314536 /* main.cpp */; };
 		ACBB144B1BD5B7B900314536 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBB144A1BD5B7B900314536 /* IOKit.framework */; };
 		ACBB144D1BD5B7C500314536 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBB144C1BD5B7C500314536 /* CoreVideo.framework */; };
 		ACBB144F1BD5B7CC00314536 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBB144E1BD5B7CC00314536 /* Cocoa.framework */; };
 		ACBB14511BD5B7D500314536 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBB14501BD5B7D500314536 /* OpenGL.framework */; };
 		ACBB14531BD5B7F900314536 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACBB14521BD5B7F900314536 /* libglfw3.a */; };
+		ACBB14581BD5C39F00314536 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACBB14571BD5C39F00314536 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,12 +29,13 @@
 
 /* Begin PBXFileReference section */
 		ACBB14401BD5B68000314536 /* lacty */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lacty; sourceTree = BUILT_PRODUCTS_DIR; };
-		ACBB14431BD5B68000314536 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		ACBB144A1BD5B7B900314536 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
 		ACBB144C1BD5B7C500314536 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		ACBB144E1BD5B7CC00314536 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		ACBB14501BD5B7D500314536 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		ACBB14521BD5B7F900314536 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
+		ACBB14571BD5C39F00314536 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		ACBB161B1BD5CE1C00314536 /* vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = vector.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +57,14 @@
 		ACBB14371BD5B68000314536 = {
 			isa = PBXGroup;
 			children = (
+				ACBB16171BD5C49F00314536 /* lacty */,
 				ACBB14521BD5B7F900314536 /* libglfw3.a */,
 				ACBB14501BD5B7D500314536 /* OpenGL.framework */,
 				ACBB144E1BD5B7CC00314536 /* Cocoa.framework */,
 				ACBB144C1BD5B7C500314536 /* CoreVideo.framework */,
 				ACBB144A1BD5B7B900314536 /* IOKit.framework */,
-				ACBB14421BD5B68000314536 /* lacty */,
 				ACBB14411BD5B68000314536 /* Products */,
+				ACBB14561BD5C39F00314536 /* src */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,12 +76,21 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		ACBB14421BD5B68000314536 /* lacty */ = {
+		ACBB14561BD5C39F00314536 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				ACBB14431BD5B68000314536 /* main.cpp */,
+				ACBB14571BD5C39F00314536 /* main.cpp */,
 			);
-			path = lacty;
+			path = src;
+			sourceTree = "<group>";
+		};
+		ACBB16171BD5C49F00314536 /* lacty */ = {
+			isa = PBXGroup;
+			children = (
+				ACBB161B1BD5CE1C00314536 /* vector.hpp */,
+			);
+			name = lacty;
+			path = include/lacty;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +149,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ACBB14441BD5B68000314536 /* main.cpp in Sources */,
+				ACBB14581BD5C39F00314536 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
