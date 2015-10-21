@@ -35,8 +35,9 @@
 		ACBB14501BD5B7D500314536 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
 		ACBB14521BD5B7F900314536 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
 		ACBB14571BD5C39F00314536 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
-		ACBB161C1BD5D81000314536 /* Vector.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Vector.hpp; sourceTree = "<group>"; };
 		ACBB161D1BD5DF0800314536 /* Namespace.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Namespace.h; sourceTree = "<group>"; };
+		ACBB161E1BD74B2500314536 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		ACBB161F1BD74B4A00314536 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,7 +90,8 @@
 			isa = PBXGroup;
 			children = (
 				ACBB161D1BD5DF0800314536 /* Namespace.h */,
-				ACBB161C1BD5D81000314536 /* Vector.hpp */,
+				ACBB161E1BD74B2500314536 /* Vector.h */,
+				ACBB161F1BD74B4A00314536 /* Color.h */,
 			);
 			name = lacty;
 			path = include/lacty;

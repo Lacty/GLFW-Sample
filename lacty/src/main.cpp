@@ -5,11 +5,13 @@
 
 #include <iostream>
 #include <GLFW/glfw3.h>
-#include <lacty/Vector.hpp>
+#include <lacty/Vector.h>
+#include <lacty/Color.h>
 
 using namespace lacty;
 
 int main() {
-  Vec3f pos = Vec3f::zero();
-  std::cout << pos.x << std::endl;
+  Color color;
+  color = Color::orange();
+  std::cout << color.g << std::endl;
 }
