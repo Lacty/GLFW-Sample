@@ -15,9 +15,9 @@ public:
   Vec2(T x, T y) : x(x), y(y) {}
   Vec2(const Vec2<T>& src) : x(src.x), y(src.y) {}
   
-  Vec2<T> zero() const { return Vec2<T>(0, 0); }
-  Vec2<T> xAxis() const { return Vec2<T>(1, 0); }
-  Vec2<T> yAxis() const { return Vec2<T>(0, 1); }
+  static Vec2<T> zero() { return Vec2<T>(0, 0); }
+  static Vec2<T> xAxis() { return Vec2<T>(1, 0); }
+  static Vec2<T> yAxis() { return Vec2<T>(0, 1); }
   
   Vec2<T>& operator+=(const Vec2<T>& rhs) {
     x += rhs.x;
@@ -48,10 +48,11 @@ public:
   Vec3(const Vec2<T>& src) : x(src.x), y(src.y), z(0) {}
   
   Vec2<T> xy() const { return Vec2<T>(x, y); }
-  Vec3<T> zero() const { return Vec3<T>(0, 0, 0); }
-  Vec3<T> xAxis() const { return Vec3<T>(1, 0, 0); }
-  Vec3<T> yAxis() const { return Vec3<T>(0, 1, 0); }
-  Vec3<T> zAxis() const { return Vec3<T>(0, 0, 1); }
+  
+  static Vec3<T> zero() { return Vec3<T>(0, 0, 0); }
+  static Vec3<T> xAxis() { return Vec3<T>(1, 0, 0); }
+  static Vec3<T> yAxis() { return Vec3<T>(0, 1, 0); }
+  static Vec3<T> zAxis() { return Vec3<T>(0, 0, 1); }
   
   Vec3<T>& operator+=(const Vec3<T>& rhs) {
     x += rhs.x;

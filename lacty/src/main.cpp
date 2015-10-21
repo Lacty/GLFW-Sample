@@ -10,7 +10,6 @@
 using namespace lacty;
 
 int main() {
-  Vec3f pos(1, 1, 1);
-  Vec2f p = pos.xy();
-  std::cout << p.x << std::endl;
+  Vec3f pos = Vec3f::zero();
+  std::cout << pos.x << std::endl;
 }
