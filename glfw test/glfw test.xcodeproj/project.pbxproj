@@ -7,13 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC09D7E01BE0CDC500EB8C36 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC09D7DF1BE0CDC500EB8C36 /* AppDelegate.m */; };
-		AC09D7E31BE0CDC500EB8C36 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC09D7E21BE0CDC500EB8C36 /* main.m */; };
-		AC09D7E61BE0CDC500EB8C36 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC09D7E51BE0CDC500EB8C36 /* ViewController.m */; };
-		AC09D7E81BE0CDC500EB8C36 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC09D7E71BE0CDC500EB8C36 /* Assets.xcassets */; };
-		AC09D7EB1BE0CDC500EB8C36 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC09D7E91BE0CDC500EB8C36 /* Main.storyboard */; };
-		AC09D7F61BE0CDC500EB8C36 /* glfw_testTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC09D7F51BE0CDC500EB8C36 /* glfw_testTests.m */; };
-		AC09D8011BE0CDC500EB8C36 /* glfw_testUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC09D8001BE0CDC500EB8C36 /* glfw_testUITests.m */; };
+		AC09D80F1BE0CF3B00EB8C36 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D80E1BE0CF3B00EB8C36 /* IOKit.framework */; };
+		AC09D8111BE0CF4500EB8C36 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8101BE0CF4500EB8C36 /* CoreVideo.framework */; };
+		AC09D8131BE0CF4C00EB8C36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8121BE0CF4C00EB8C36 /* Cocoa.framework */; };
+		AC09D8151BE0CF5300EB8C36 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8141BE0CF5300EB8C36 /* OpenGL.framework */; };
+		AC09D8171BE0CF6A00EB8C36 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8161BE0CF6A00EB8C36 /* libglfw3.a */; };
+		AC09D81A1BE0CFC400EB8C36 /* res in Resources */ = {isa = PBXBuildFile; fileRef = AC09D8181BE0CFC400EB8C36 /* res */; };
+		AC09D8261BE0D17700EB8C36 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC09D8251BE0D17700EB8C36 /* main.cpp */; };
+		AC09D8271BE0D1CB00EB8C36 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D80E1BE0CF3B00EB8C36 /* IOKit.framework */; };
+		AC09D8281BE0D1D400EB8C36 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8101BE0CF4500EB8C36 /* CoreVideo.framework */; };
+		AC09D8291BE0D1DB00EB8C36 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8121BE0CF4C00EB8C36 /* Cocoa.framework */; };
+		AC09D82A1BE0D1E300EB8C36 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8141BE0CF5300EB8C36 /* OpenGL.framework */; };
+		AC09D82B1BE0D1F100EB8C36 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC09D8161BE0CF6A00EB8C36 /* libglfw3.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +40,16 @@
 
 /* Begin PBXFileReference section */
 		AC09D7DB1BE0CDC500EB8C36 /* glfw test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "glfw test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC09D7DE1BE0CDC500EB8C36 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AC09D7DF1BE0CDC500EB8C36 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AC09D7E21BE0CDC500EB8C36 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AC09D7E41BE0CDC500EB8C36 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AC09D7E51BE0CDC500EB8C36 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AC09D7E71BE0CDC500EB8C36 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AC09D7EA1BE0CDC500EB8C36 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC09D7EC1BE0CDC500EB8C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC09D7F11BE0CDC500EB8C36 /* glfw testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "glfw testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC09D7F51BE0CDC500EB8C36 /* glfw_testTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = glfw_testTests.m; sourceTree = "<group>"; };
-		AC09D7F71BE0CDC500EB8C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC09D7FC1BE0CDC500EB8C36 /* glfw testUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "glfw testUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC09D8001BE0CDC500EB8C36 /* glfw_testUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = glfw_testUITests.m; sourceTree = "<group>"; };
-		AC09D8021BE0CDC500EB8C36 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC09D80E1BE0CF3B00EB8C36 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AC09D8101BE0CF4500EB8C36 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		AC09D8121BE0CF4C00EB8C36 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AC09D8141BE0CF5300EB8C36 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AC09D8161BE0CF6A00EB8C36 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
+		AC09D8181BE0CFC400EB8C36 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
+		AC09D8251BE0D17700EB8C36 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +57,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC09D82B1BE0D1F100EB8C36 /* libglfw3.a in Frameworks */,
+				AC09D82A1BE0D1E300EB8C36 /* OpenGL.framework in Frameworks */,
+				AC09D8291BE0D1DB00EB8C36 /* Cocoa.framework in Frameworks */,
+				AC09D8281BE0D1D400EB8C36 /* CoreVideo.framework in Frameworks */,
+				AC09D8271BE0D1CB00EB8C36 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,6 +76,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC09D8171BE0CF6A00EB8C36 /* libglfw3.a in Frameworks */,
+				AC09D8151BE0CF5300EB8C36 /* OpenGL.framework in Frameworks */,
+				AC09D8131BE0CF4C00EB8C36 /* Cocoa.framework in Frameworks */,
+				AC09D8111BE0CF4500EB8C36 /* CoreVideo.framework in Frameworks */,
+				AC09D80F1BE0CF3B00EB8C36 /* IOKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +90,15 @@
 		AC09D7D21BE0CDC500EB8C36 = {
 			isa = PBXGroup;
 			children = (
+				AC09D8161BE0CF6A00EB8C36 /* libglfw3.a */,
+				AC09D8141BE0CF5300EB8C36 /* OpenGL.framework */,
+				AC09D8121BE0CF4C00EB8C36 /* Cocoa.framework */,
+				AC09D8101BE0CF4500EB8C36 /* CoreVideo.framework */,
+				AC09D80E1BE0CF3B00EB8C36 /* IOKit.framework */,
 				AC09D7DD1BE0CDC500EB8C36 /* glfw test */,
-				AC09D7F41BE0CDC500EB8C36 /* glfw testTests */,
-				AC09D7FF1BE0CDC500EB8C36 /* glfw testUITests */,
 				AC09D7DC1BE0CDC500EB8C36 /* Products */,
+				AC09D8241BE0D17700EB8C36 /* src */,
+				AC09D8181BE0CFC400EB8C36 /* res */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,42 +115,17 @@
 		AC09D7DD1BE0CDC500EB8C36 /* glfw test */ = {
 			isa = PBXGroup;
 			children = (
-				AC09D7DE1BE0CDC500EB8C36 /* AppDelegate.h */,
-				AC09D7DF1BE0CDC500EB8C36 /* AppDelegate.m */,
-				AC09D7E41BE0CDC500EB8C36 /* ViewController.h */,
-				AC09D7E51BE0CDC500EB8C36 /* ViewController.m */,
-				AC09D7E71BE0CDC500EB8C36 /* Assets.xcassets */,
-				AC09D7E91BE0CDC500EB8C36 /* Main.storyboard */,
 				AC09D7EC1BE0CDC500EB8C36 /* Info.plist */,
-				AC09D7E11BE0CDC500EB8C36 /* Supporting Files */,
 			);
 			path = "glfw test";
 			sourceTree = "<group>";
 		};
-		AC09D7E11BE0CDC500EB8C36 /* Supporting Files */ = {
+		AC09D8241BE0D17700EB8C36 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				AC09D7E21BE0CDC500EB8C36 /* main.m */,
+				AC09D8251BE0D17700EB8C36 /* main.cpp */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC09D7F41BE0CDC500EB8C36 /* glfw testTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC09D7F51BE0CDC500EB8C36 /* glfw_testTests.m */,
-				AC09D7F71BE0CDC500EB8C36 /* Info.plist */,
-			);
-			path = "glfw testTests";
-			sourceTree = "<group>";
-		};
-		AC09D7FF1BE0CDC500EB8C36 /* glfw testUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AC09D8001BE0CDC500EB8C36 /* glfw_testUITests.m */,
-				AC09D8021BE0CDC500EB8C36 /* Info.plist */,
-			);
-			path = "glfw testUITests";
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +231,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC09D7E81BE0CDC500EB8C36 /* Assets.xcassets in Resources */,
-				AC09D7EB1BE0CDC500EB8C36 /* Main.storyboard in Resources */,
+				AC09D81A1BE0CFC400EB8C36 /* res in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +256,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC09D7E61BE0CDC500EB8C36 /* ViewController.m in Sources */,
-				AC09D7E31BE0CDC500EB8C36 /* main.m in Sources */,
-				AC09D7E01BE0CDC500EB8C36 /* AppDelegate.m in Sources */,
+				AC09D8261BE0D17700EB8C36 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +264,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC09D7F61BE0CDC500EB8C36 /* glfw_testTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +271,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC09D8011BE0CDC500EB8C36 /* glfw_testUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,17 +288,6 @@
 			targetProxy = AC09D7FD1BE0CDC500EB8C36 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AC09D7E91BE0CDC500EB8C36 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC09D7EA1BE0CDC500EB8C36 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AC09D8031BE0CDC500EB8C36 /* Debug */ = {
@@ -399,8 +374,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = "glfw test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glfw-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,8 +391,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = "glfw test/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glfw-test";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -448,8 +433,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = "glfw testUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glfw-testUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = "glfw test";
@@ -461,8 +451,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = "glfw testUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.glfw-testUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_TARGET_NAME = "glfw test";
