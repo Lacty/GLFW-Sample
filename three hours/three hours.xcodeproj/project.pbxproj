@@ -1,0 +1,489 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		ACE26BF91BE9F57F0065C6B4 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACE26BF81BE9F57F0065C6B4 /* main.cpp */; };
+		ACE26BFB1BE9F5CA0065C6B4 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE26BFA1BE9F5CA0065C6B4 /* OpenGL.framework */; };
+		ACE26BFD1BE9F5D30065C6B4 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE26BFC1BE9F5D20065C6B4 /* Cocoa.framework */; };
+		ACE26BFF1BE9F5E00065C6B4 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE26BFE1BE9F5E00065C6B4 /* CoreVideo.framework */; };
+		ACE26C011BE9F5E70065C6B4 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE26C001BE9F5E70065C6B4 /* IOKit.framework */; };
+		ACE26C031BE9F5FF0065C6B4 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ACE26C021BE9F5FF0065C6B4 /* libglfw3.a */; };
+		ACE26C051BE9F6230065C6B4 /* res in Resources */ = {isa = PBXBuildFile; fileRef = ACE26C041BE9F6230065C6B4 /* res */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		ACE26BDB1BE9F4950065C6B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACE26BBC1BE9F4950065C6B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACE26BC31BE9F4950065C6B4;
+			remoteInfo = "three hours";
+		};
+		ACE26BE61BE9F4950065C6B4 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = ACE26BBC1BE9F4950065C6B4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = ACE26BC31BE9F4950065C6B4;
+			remoteInfo = "three hours";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		ACE26BC41BE9F4950065C6B4 /* three hours.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "three hours.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACE26BD51BE9F4950065C6B4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ACE26BDA1BE9F4950065C6B4 /* three hoursTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "three hoursTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACE26BE51BE9F4950065C6B4 /* three hoursUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "three hoursUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACE26BF81BE9F57F0065C6B4 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		ACE26BFA1BE9F5CA0065C6B4 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		ACE26BFC1BE9F5D20065C6B4 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		ACE26BFE1BE9F5E00065C6B4 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		ACE26C001BE9F5E70065C6B4 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		ACE26C021BE9F5FF0065C6B4 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
+		ACE26C041BE9F6230065C6B4 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		ACE26BC11BE9F4950065C6B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACE26C031BE9F5FF0065C6B4 /* libglfw3.a in Frameworks */,
+				ACE26C011BE9F5E70065C6B4 /* IOKit.framework in Frameworks */,
+				ACE26BFF1BE9F5E00065C6B4 /* CoreVideo.framework in Frameworks */,
+				ACE26BFD1BE9F5D30065C6B4 /* Cocoa.framework in Frameworks */,
+				ACE26BFB1BE9F5CA0065C6B4 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACE26BD71BE9F4950065C6B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACE26BE21BE9F4950065C6B4 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		ACE26BBB1BE9F4950065C6B4 = {
+			isa = PBXGroup;
+			children = (
+				ACE26C021BE9F5FF0065C6B4 /* libglfw3.a */,
+				ACE26C001BE9F5E70065C6B4 /* IOKit.framework */,
+				ACE26BFE1BE9F5E00065C6B4 /* CoreVideo.framework */,
+				ACE26BFC1BE9F5D20065C6B4 /* Cocoa.framework */,
+				ACE26BFA1BE9F5CA0065C6B4 /* OpenGL.framework */,
+				ACE26BC61BE9F4950065C6B4 /* three hours */,
+				ACE26BC51BE9F4950065C6B4 /* Products */,
+				ACE26BF71BE9F57F0065C6B4 /* src */,
+				ACE26C041BE9F6230065C6B4 /* res */,
+			);
+			sourceTree = "<group>";
+		};
+		ACE26BC51BE9F4950065C6B4 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				ACE26BC41BE9F4950065C6B4 /* three hours.app */,
+				ACE26BDA1BE9F4950065C6B4 /* three hoursTests.xctest */,
+				ACE26BE51BE9F4950065C6B4 /* three hoursUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		ACE26BC61BE9F4950065C6B4 /* three hours */ = {
+			isa = PBXGroup;
+			children = (
+				ACE26BD51BE9F4950065C6B4 /* Info.plist */,
+			);
+			path = "three hours";
+			sourceTree = "<group>";
+		};
+		ACE26BF71BE9F57F0065C6B4 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				ACE26BF81BE9F57F0065C6B4 /* main.cpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		ACE26BC31BE9F4950065C6B4 /* three hours */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACE26BEE1BE9F4950065C6B4 /* Build configuration list for PBXNativeTarget "three hours" */;
+			buildPhases = (
+				ACE26BC01BE9F4950065C6B4 /* Sources */,
+				ACE26BC11BE9F4950065C6B4 /* Frameworks */,
+				ACE26BC21BE9F4950065C6B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "three hours";
+			productName = "three hours";
+			productReference = ACE26BC41BE9F4950065C6B4 /* three hours.app */;
+			productType = "com.apple.product-type.application";
+		};
+		ACE26BD91BE9F4950065C6B4 /* three hoursTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACE26BF11BE9F4950065C6B4 /* Build configuration list for PBXNativeTarget "three hoursTests" */;
+			buildPhases = (
+				ACE26BD61BE9F4950065C6B4 /* Sources */,
+				ACE26BD71BE9F4950065C6B4 /* Frameworks */,
+				ACE26BD81BE9F4950065C6B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACE26BDC1BE9F4950065C6B4 /* PBXTargetDependency */,
+			);
+			name = "three hoursTests";
+			productName = "three hoursTests";
+			productReference = ACE26BDA1BE9F4950065C6B4 /* three hoursTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		ACE26BE41BE9F4950065C6B4 /* three hoursUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = ACE26BF41BE9F4950065C6B4 /* Build configuration list for PBXNativeTarget "three hoursUITests" */;
+			buildPhases = (
+				ACE26BE11BE9F4950065C6B4 /* Sources */,
+				ACE26BE21BE9F4950065C6B4 /* Frameworks */,
+				ACE26BE31BE9F4950065C6B4 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				ACE26BE71BE9F4950065C6B4 /* PBXTargetDependency */,
+			);
+			name = "three hoursUITests";
+			productName = "three hoursUITests";
+			productReference = ACE26BE51BE9F4950065C6B4 /* three hoursUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		ACE26BBC1BE9F4950065C6B4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Yanai;
+				TargetAttributes = {
+					ACE26BC31BE9F4950065C6B4 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					ACE26BD91BE9F4950065C6B4 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = ACE26BC31BE9F4950065C6B4;
+					};
+					ACE26BE41BE9F4950065C6B4 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = ACE26BC31BE9F4950065C6B4;
+					};
+				};
+			};
+			buildConfigurationList = ACE26BBF1BE9F4950065C6B4 /* Build configuration list for PBXProject "three hours" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = ACE26BBB1BE9F4950065C6B4;
+			productRefGroup = ACE26BC51BE9F4950065C6B4 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				ACE26BC31BE9F4950065C6B4 /* three hours */,
+				ACE26BD91BE9F4950065C6B4 /* three hoursTests */,
+				ACE26BE41BE9F4950065C6B4 /* three hoursUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		ACE26BC21BE9F4950065C6B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACE26C051BE9F6230065C6B4 /* res in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACE26BD81BE9F4950065C6B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACE26BE31BE9F4950065C6B4 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		ACE26BC01BE9F4950065C6B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACE26BF91BE9F57F0065C6B4 /* main.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACE26BD61BE9F4950065C6B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		ACE26BE11BE9F4950065C6B4 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		ACE26BDC1BE9F4950065C6B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACE26BC31BE9F4950065C6B4 /* three hours */;
+			targetProxy = ACE26BDB1BE9F4950065C6B4 /* PBXContainerItemProxy */;
+		};
+		ACE26BE71BE9F4950065C6B4 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = ACE26BC31BE9F4950065C6B4 /* three hours */;
+			targetProxy = ACE26BE61BE9F4950065C6B4 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		ACE26BEC1BE9F4950065C6B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		ACE26BED1BE9F4950065C6B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		ACE26BEF1BE9F4950065C6B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
+				INFOPLIST_FILE = "three hours/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSX/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.three-hours";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		ACE26BF01BE9F4950065C6B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
+				INFOPLIST_FILE = "three hours/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/OSX/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.three-hours";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		ACE26BF21BE9F4950065C6B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "three hoursTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.three-hoursTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/three hours.app/Contents/MacOS/three hours";
+			};
+			name = Debug;
+		};
+		ACE26BF31BE9F4950065C6B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "three hoursTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.three-hoursTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/three hours.app/Contents/MacOS/three hours";
+			};
+			name = Release;
+		};
+		ACE26BF51BE9F4950065C6B4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "three hoursUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.three-hoursUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "three hours";
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		ACE26BF61BE9F4950065C6B4 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = "three hoursUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.three-hoursUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "three hours";
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		ACE26BBF1BE9F4950065C6B4 /* Build configuration list for PBXProject "three hours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE26BEC1BE9F4950065C6B4 /* Debug */,
+				ACE26BED1BE9F4950065C6B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		ACE26BEE1BE9F4950065C6B4 /* Build configuration list for PBXNativeTarget "three hours" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE26BEF1BE9F4950065C6B4 /* Debug */,
+				ACE26BF01BE9F4950065C6B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ACE26BF11BE9F4950065C6B4 /* Build configuration list for PBXNativeTarget "three hoursTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE26BF21BE9F4950065C6B4 /* Debug */,
+				ACE26BF31BE9F4950065C6B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		ACE26BF41BE9F4950065C6B4 /* Build configuration list for PBXNativeTarget "three hoursUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				ACE26BF51BE9F4950065C6B4 /* Debug */,
+				ACE26BF61BE9F4950065C6B4 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = ACE26BBC1BE9F4950065C6B4 /* Project object */;
+}
