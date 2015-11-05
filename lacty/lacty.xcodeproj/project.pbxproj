@@ -7,13 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC46DAF91BEB712800261371 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = AC46DAF81BEB712800261371 /* AppDelegate.m */; };
-		AC46DAFC1BEB712800261371 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = AC46DAFB1BEB712800261371 /* main.m */; };
-		AC46DAFF1BEB712800261371 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = AC46DAFE1BEB712800261371 /* ViewController.m */; };
-		AC46DB011BEB712800261371 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AC46DB001BEB712800261371 /* Assets.xcassets */; };
-		AC46DB041BEB712800261371 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AC46DB021BEB712800261371 /* Main.storyboard */; };
-		AC46DB0F1BEB712800261371 /* lactyTests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC46DB0E1BEB712800261371 /* lactyTests.m */; };
-		AC46DB1A1BEB712800261371 /* lactyUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = AC46DB191BEB712800261371 /* lactyUITests.m */; };
+		AC46DB281BEB742500261371 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB271BEB742500261371 /* OpenGL.framework */; };
+		AC46DB2A1BEB742C00261371 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB291BEB742C00261371 /* Cocoa.framework */; };
+		AC46DB2C1BEB743400261371 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2B1BEB743400261371 /* IOKit.framework */; };
+		AC46DB2E1BEB743D00261371 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2D1BEB743D00261371 /* CoreVideo.framework */; };
+		AC46DB301BEB744800261371 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2F1BEB744800261371 /* libglfw3.a */; };
+		AC46DB341BEB757900261371 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC46DB321BEB757900261371 /* main.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,20 +34,15 @@
 
 /* Begin PBXFileReference section */
 		AC46DAF41BEB712800261371 /* lacty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lacty.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC46DAF71BEB712800261371 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		AC46DAF81BEB712800261371 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		AC46DAFB1BEB712800261371 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		AC46DAFD1BEB712800261371 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		AC46DAFE1BEB712800261371 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		AC46DB001BEB712800261371 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		AC46DB031BEB712800261371 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AC46DB051BEB712800261371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC46DB0A1BEB712800261371 /* lactyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lactyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC46DB0E1BEB712800261371 /* lactyTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lactyTests.m; sourceTree = "<group>"; };
-		AC46DB101BEB712800261371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AC46DB151BEB712800261371 /* lactyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lactyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AC46DB191BEB712800261371 /* lactyUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = lactyUITests.m; sourceTree = "<group>"; };
-		AC46DB1B1BEB712800261371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC46DB271BEB742500261371 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AC46DB291BEB742C00261371 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AC46DB2B1BEB743400261371 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AC46DB2D1BEB743D00261371 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		AC46DB2F1BEB744800261371 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
+		AC46DB321BEB757900261371 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +50,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC46DB301BEB744800261371 /* libglfw3.a in Frameworks */,
+				AC46DB2E1BEB743D00261371 /* CoreVideo.framework in Frameworks */,
+				AC46DB2C1BEB743400261371 /* IOKit.framework in Frameworks */,
+				AC46DB2A1BEB742C00261371 /* Cocoa.framework in Frameworks */,
+				AC46DB281BEB742500261371 /* OpenGL.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,10 +78,14 @@
 		AC46DAEB1BEB712800261371 = {
 			isa = PBXGroup;
 			children = (
+				AC46DB2F1BEB744800261371 /* libglfw3.a */,
+				AC46DB2D1BEB743D00261371 /* CoreVideo.framework */,
+				AC46DB2B1BEB743400261371 /* IOKit.framework */,
+				AC46DB291BEB742C00261371 /* Cocoa.framework */,
+				AC46DB271BEB742500261371 /* OpenGL.framework */,
 				AC46DAF61BEB712800261371 /* lacty */,
-				AC46DB0D1BEB712800261371 /* lactyTests */,
-				AC46DB181BEB712800261371 /* lactyUITests */,
 				AC46DAF51BEB712800261371 /* Products */,
+				AC46DB311BEB756C00261371 /* src */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,42 +102,17 @@
 		AC46DAF61BEB712800261371 /* lacty */ = {
 			isa = PBXGroup;
 			children = (
-				AC46DAF71BEB712800261371 /* AppDelegate.h */,
-				AC46DAF81BEB712800261371 /* AppDelegate.m */,
-				AC46DAFD1BEB712800261371 /* ViewController.h */,
-				AC46DAFE1BEB712800261371 /* ViewController.m */,
-				AC46DB001BEB712800261371 /* Assets.xcassets */,
-				AC46DB021BEB712800261371 /* Main.storyboard */,
 				AC46DB051BEB712800261371 /* Info.plist */,
-				AC46DAFA1BEB712800261371 /* Supporting Files */,
 			);
 			path = lacty;
 			sourceTree = "<group>";
 		};
-		AC46DAFA1BEB712800261371 /* Supporting Files */ = {
+		AC46DB311BEB756C00261371 /* src */ = {
 			isa = PBXGroup;
 			children = (
-				AC46DAFB1BEB712800261371 /* main.m */,
+				AC46DB321BEB757900261371 /* main.cpp */,
 			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		AC46DB0D1BEB712800261371 /* lactyTests */ = {
-			isa = PBXGroup;
-			children = (
-				AC46DB0E1BEB712800261371 /* lactyTests.m */,
-				AC46DB101BEB712800261371 /* Info.plist */,
-			);
-			path = lactyTests;
-			sourceTree = "<group>";
-		};
-		AC46DB181BEB712800261371 /* lactyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AC46DB191BEB712800261371 /* lactyUITests.m */,
-				AC46DB1B1BEB712800261371 /* Info.plist */,
-			);
-			path = lactyUITests;
+			path = src;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,8 +218,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC46DB011BEB712800261371 /* Assets.xcassets in Resources */,
-				AC46DB041BEB712800261371 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -266,9 +242,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC46DAFF1BEB712800261371 /* ViewController.m in Sources */,
-				AC46DAFC1BEB712800261371 /* main.m in Sources */,
-				AC46DAF91BEB712800261371 /* AppDelegate.m in Sources */,
+				AC46DB341BEB757900261371 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC46DB0F1BEB712800261371 /* lactyTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,7 +257,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AC46DB1A1BEB712800261371 /* lactyUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -302,17 +274,6 @@
 			targetProxy = AC46DB161BEB712800261371 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		AC46DB021BEB712800261371 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AC46DB031BEB712800261371 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		AC46DB1C1BEB712800261371 /* Debug */ = {
@@ -399,8 +360,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = lacty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lacty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -411,8 +377,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = lacty/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.lacty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -489,6 +460,7 @@
 				AC46DB201BEB712800261371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC46DB211BEB712800261371 /* Build configuration list for PBXNativeTarget "lactyTests" */ = {
 			isa = XCConfigurationList;
@@ -497,6 +469,7 @@
 				AC46DB231BEB712800261371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		AC46DB241BEB712800261371 /* Build configuration list for PBXNativeTarget "lactyUITests" */ = {
 			isa = XCConfigurationList;
@@ -505,6 +478,7 @@
 				AC46DB261BEB712800261371 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -28,6 +28,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		AC09D7D11BE0CCC800EB8C36 /* res */ = {isa = PBXFileReference; lastKnownFileType = folder; path = res; sourceTree = "<group>"; };
 		AC4C06761BC5053200B9498F /* GLFW Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "GLFW Test"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AC4C06791BC5053200B9498F /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		AC4C068D1BC5121900B9498F /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
@@ -56,6 +57,7 @@
 		AC4C066D1BC5053200B9498F = {
 			isa = PBXGroup;
 			children = (
+				AC09D7D11BE0CCC800EB8C36 /* res */,
 				AC4C06951BC5146F00B9498F /* IOKit.framework */,
 				AC4C06931BC5145300B9498F /* CoreVideo.framework */,
 				AC4C06911BC5144500B9498F /* Cocoa.framework */,

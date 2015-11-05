@@ -123,6 +123,13 @@ int main() {
       game = GameManager();
     }
     
+    // 以降の描画はブレンディングを有効にすると
+    // OpenGLに指示
+    //glEnable(GL_BLEND);
+    
+    // ブレンディングの計算方法を指示
+    //glBlendFunc(GL_SRC_ALPHA, GL_SRC_COLOR);
+    
     static const int scale = 300;
     
     // 描画する矩形の4頂点を配列で用意

@@ -2,6 +2,10 @@
 #include <iostream>
 #include <GLFW/glfw3.h>
 #include <cmath>
+
+#include <cstdlib>
+// C++ でファイルを扱うライブラリ
+#include <fstream>
 #include <vector>
 
 #ifdef _MAC_VER
@@ -26,31 +30,6 @@ struct ColorA {
     : red(red), green(green), blue(blue), alpha(1.0f) {}
 };
 
-void draw(float angle) {
-  GLfloat vtx[2 * 2 * 3];
-  
-  for (int i = 0; i < 3 * 2; i++) {
-    if (i < 3) {
-      vtx[i * 2 + 0] = std::sin(i * 2 * M_PI / 3 + angle) * 100.0f - 100.0f;
-      vtx[i * 2 + 1] = std::cos(i * 2 * M_PI / 3 + angle) * 100.0f;
-    } else {
-      vtx[i * 2 + 0] = std::sin(i * 2 * M_PI / 3 + angle) * 100.0f + 100.0f;
-      vtx[i * 2 + 1] = std::cos(i * 2 * M_PI / 3 + angle) * 100.0f;
-    }
-  }
-  
-  glVertexPointer(2, GL_FLOAT, 0, vtx);
-  glColor4f(1.0f, 0.6f, 0.0f, 1.0f);
-  
-  
-  glEnableClientState(GL_VERTEX_ARRAY);
-  
-  // OpenGLに三角形の描画を指定
-  glDrawArrays(GL_TRIANGLES, 0, 6);
-  
-  glDisableClientState(GL_VERTEX_ARRAY);
-}
-
 enum WindowSize {
   Width = 640,
   Height = 480
@@ -62,6 +41,51 @@ void changeWindowSize(GLFWwindow* window,
   glViewport(0, 0, width, height);
   glLoadIdentity();
   glOrtho(-width * 0.5f, width * 0.5f, -height * 0.5f, height * 0.5f, -0.0f, 1.0f);
+}
+
+bool setupTexture(const GLuint id, const char* file) {
+  std::ifstream fstr(file, std::ios::binary);
+  
+  // 処理を中断
+  if (!fstr) return false;
+  
+  // ファイルサイズを取得
+  //  読み込み位置をファイル末尾へ移動
+  //  ->ファイル先頭から読み込み位置までのオフセット
+  //  =ファイルサイズ
+  const size_t file_size = static_cast<size_t>(fstr.seekg(0, fstr.end).tellg());
+  
+  // 読み込み位置をファイル先頭へ戻す
+  fstr.seekg(0, fstr.beg);
+  
+  // 動的配列を使ってファイルを読み込む場所を確保
+  // charをfile_size個、メモリに確保する
+  std::vector<char> texture_buffer(file_size);
+  
+  // 確保した場所へファイルの内容をすべて読み込む
+  fstr.read(&texture_buffer[0], file_size);
+  
+  // OpenGLに
+  // 「これから、テクスチャ識別子idに対して指示を与えます」
+  // と指示
+  glBindTexture(GL_TEXTURE_2D, id);
+  
+  // 1ピクセルに「赤、緑、青、α」の情報を持つ
+  // 幅256ピクセル、高さ256ピクセルの画像データをOpenGLへ転送
+  glTexImage2D(GL_TEXTURE_2D,
+                   0, GL_RGBA, 256, 256,
+                   0, GL_RGBA, GL_UNSIGNED_BYTE,
+                   &texture_buffer[0]);
+  
+  // 画像が拡大された場合にどう振る舞うか指定
+  glTexParameteri(GL_TEXTURE_2D,
+                  GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  
+  // 画像が縮小された場合にどう振る舞うか指定
+  glTexParameteri(GL_TEXTURE,
+                  GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  
+  return true;
 }
 
 int main() {
@@ -99,6 +123,20 @@ int main() {
   glOrtho(-Width * 0.5f, Width * 0.5f, -Height * 0.5f, Height * 0.5f, -0.0f, 1.0f);
   
   
+  // OpenGLにテクスチャ識別子を1つ作ってもらう
+  GLuint texture_id;
+  glGenTextures(1, &texture_id);
+  
+  // 画像ファイルを読み込んで
+  // テクスチャ識別子に設定する
+  if (!setupTexture(texture_id, "res/image.raw")) {
+    // 画像の読み込みに失敗したら
+    // テクスチャ識別子を消去、GLFWの後始末をして終了
+    glDeleteTextures(1, &texture_id);
+    glfwTerminate();
+    return EXIT_FAILURE;
+  }
+  
   // Loop until the user closes the window
   while (!glfwWindowShouldClose(window)) {
     // 描画バッファを塗りつぶす色の成分を指定
@@ -108,11 +146,36 @@ int main() {
     glClear(GL_COLOR_BUFFER_BIT);
     
     
-    static float angle = 0.1;
-    angle += 0.01f;
+    // 描画する矩形の4頂点を配列で用意
+    static const GLfloat vtx[] = {
+      -0.5f, -0.5f,
+       0.5f, -0.5f,
+       0.5f,  0.5f,
+      -0.5f,  0.5f
+    };
+    glVertexPointer(2, GL_FLOAT, 0, vtx);
     
-    draw(angle);
+    // 頂点ごとのテクスチャ座標を配列で準備
+    static const GLfloat texture_uv[] = {
+      0.0f, 0.0f,
+      1.0f, 0.0f,
+      1.0f, 1.0f,
+      0.0f, 1.0f
+    };
+    glTexCoordPointer(2, GL_FLOAT, 0, texture_uv);
     
+    glEnable(GL_TEXTURE_2D);
+    glEnableClientState(GL_VERTEX_ARRAY);
+    
+    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    
+    // 矩形を一つ描画
+    glDrawArrays(GL_QUADS, 0, 1);
+    
+    // 描画が済んだら使った機能を全て無効にする
+    glDisableClientState(GL_VERTEX_ARRAY);
+    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDisable(GL_TEXTURE_2D);
     
     // Swap front and back buffers
     glfwSwapBuffers(window);
@@ -120,6 +183,9 @@ int main() {
     // Poll for and process events
     glfwPollEvents();
   }
+  
+  // 使い終わったテクスチャ識別子を削除
+  glDeleteTextures(1, &texture_id);
   
   glfwTerminate();
   return 0;

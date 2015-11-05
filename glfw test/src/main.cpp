@@ -43,7 +43,7 @@ void changeWindowSize(GLFWwindow* window,
   glOrtho(-width * 0.5f, width * 0.5f, -height * 0.5f, height * 0.5f, -0.0f, 1.0f);
 }
 
-bool setupTexture(const GLuint id, const std::string& file) {
+bool setupTexture(const GLuint id, const char* file) {
   std::ifstream fstr(file, std::ios::binary);
   
   // 処理を中断
@@ -124,81 +124,66 @@ int main() {
   
   
   // OpenGLにテクスチャ識別子を1つ作ってもらう
-  static const int id_num = 2;
-  GLuint texture_id[id_num];
-  glGenTextures(id_num, &texture_id[0]);
-  
-  std::string path[id_num] = {
-    "res/image.raw",
-    "res/pc5edb6ji.raw"
-  };
+  GLuint texture_id;
+  glGenTextures(1, &texture_id);
   
   // 画像ファイルを読み込んで
   // テクスチャ識別子に設定する
-  for (int i = 0; i < 2; i++) {
-    if (!setupTexture(texture_id[i], path[i])) {
-      // 画像の読み込みに失敗したら
-      // テクスチャ識別子を消去、GLFWの後始末をして終了
-      glDeleteTextures(2, &texture_id[0]);
-      glfwTerminate();
-      return EXIT_FAILURE;
-    }
+  if (!setupTexture(texture_id, "res/image.raw")) {
+    // 画像の読み込みに失敗したら
+    // テクスチャ識別子を消去、GLFWの後始末をして終了
+    glDeleteTextures(1, &texture_id);
+    glfwTerminate();
+    return EXIT_FAILURE;
   }
   
   // Loop until the user closes the window
   while (!glfwWindowShouldClose(window)) {
     // 描画バッファを塗りつぶす色の成分を指定
-    glClearColor(0.4f, 0.4f, 0.4f, 0.0f);
+    glClearColor(0.0f, 0.0f, 1.0f, 0.0f);
     
     // 描画バッファを塗りつぶす
     glClear(GL_COLOR_BUFFER_BIT);
     
+    // 以降の描画はブレンディングを有効にすると
+    // OpenGLに指示
+    glEnable(GL_BLEND);
     
-    static const int scale = 200;
+    // ブレンディングの計算方法を指示
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_CONSTANT_ALPHA);
     
-    // 描画する矩形の4頂点を配列で用意
-    static const GLfloat vtx[] = {
-      -0.5f * scale * 1.5f, -0.5f * scale,
-       0.5f * scale * 1.5f, -0.5f * scale,
-       0.5f * scale * 1.5f,  0.5f * scale,
-      -0.5f * scale * 1.5f,  0.5f * scale
+    static const int scale = 150;
+    static const int offset = 30;
+    
+    static const GLfloat vtx[2 * 2 * 3] = {
+      0.0f * scale, 0.433f * scale,
+      -0.5f * scale, -0.433f * scale,
+      0.5f * scale, -0.433f * scale,
+      
+      0.0f * scale + offset, 0.433f * scale + offset,
+      -0.5f * scale + offset, -0.433f * scale + offset,
+      0.5f * scale + offset, -0.433f * scale + offset
     };
     glVertexPointer(2, GL_FLOAT, 0, vtx);
     
-    // 頂点ごとのテクスチャ座標を配列で準備
-    static const GLfloat texture_uv[] = {
-      5.0f, 5.0f,
-      0.0f, 5.0f,
-      0.0f, 0.0f,
-      5.0f, 0.0f
+    GLfloat color[] = {
+      1.0f, 0.4f, 0.4f, 1.0f,
+      0.4f, 1.0f, 0.4f, 1.0f,
+      0.4f, 0.4f, 1.0f, 1.0f,
+      
+      0.4f, 1.0f, 0.4f, 1.0f,
+      0.4f, 0.4f, 1.0f, 0.0f,
+      1.0f, 0.4f, 0.4f, 0.0f
     };
-    glTexCoordPointer(2, GL_FLOAT, 0, texture_uv);
+    glColorPointer(4, GL_FLOAT, 0, color);
     
-    // 頂点カラーを作成
-    static const GLfloat color[] = {
-      1.0f, 0.0f, 0.0f,
-      0.0f, 1.0f, 0.0f,
-      0.0f, 0.0f, 1.0f,
-      0.5f, 0.5f, 0.0f
-    };
-    glColorPointer(3, GL_FLOAT, 0, color);
-    
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
-    
-    glEnable(GL_TEXTURE_2D);
     glEnableClientState(GL_VERTEX_ARRAY);
     glEnableClientState(GL_COLOR_ARRAY);
     
-    glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+    glDrawArrays(GL_TRIANGLES, 0, 6);
     
-    // 矩形を一つ描画
-    glDrawArrays(GL_QUADS, 0, 4);
-    
-    // 描画が済んだら使った機能を全て無効にする
     glDisableClientState(GL_VERTEX_ARRAY);
     glDisableClientState(GL_COLOR_ARRAY);
-    glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-    glDisable(GL_TEXTURE_2D);
     
     // Swap front and back buffers
     glfwSwapBuffers(window);
@@ -208,9 +193,7 @@ int main() {
   }
   
   // 使い終わったテクスチャ識別子を削除
-  for (int i = 0; i < id_num; ++i) {
-    glDeleteTextures(i, &texture_id[i]);
-  }
+  glDeleteTextures(1, &texture_id);
   
   glfwTerminate();
   return 0;
