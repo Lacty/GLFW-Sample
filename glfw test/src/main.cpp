@@ -1,39 +1,47 @@
 
-#include <iostream>
 #include <GLFW/glfw3.h>
-#include <cmath>
+#include <Eigen/Core>        // Eigenを使う
+#include <Eigen/Geometry>    // Eigenを使う
+#include "graph.hpp"
 
-#include <cstdlib>
-// C++ でファイルを扱うライブラリ
-#include <fstream>
-#include <vector>
 
-#ifdef _MAC_VER
-//#define _USE_MATH_DEFINES // VS:算術関連の定義を有効にする
-#endif
 
-struct Vec2f {
-  float x;
-  float y;
-  Vec2f(float x, float y) :  x(x), y(y) {}
-  Vec2f Zero() { return Vec2f(0.0f, 0.0f); }
-};
+int Width  = 640;
+int Height = 480;
 
-struct ColorA {
-  float red;
-  float green;
-  float blue;
-  float alpha;
-  ColorA(float red, float green, float blue, float alpha)
-  : red(red), green(green), blue(blue), alpha(alpha) {}
-  ColorA(float red, float green, float blue)
-  : red(red), green(green), blue(blue), alpha(1.0f) {}
-};
+float toRadians(float degree) {
+  return degree * M_PI * 2 / 360;
+}
 
-enum WindowSize {
-  Width = 640,
-  Height = 480
-};
+Eigen::Matrix4f perspectiveView(float fovy,
+                                float aspect,
+                                float near_z,
+                                float far_z)
+{
+  float f = 1 / std::tan(toRadians(fovy) / 2);
+  
+  Eigen::Matrix4f m;
+  m(0, 0) = f / aspect;
+  m(0, 1) = 0.0f;
+  m(0, 2) = 0.0f;
+  m(0, 3) = 0.0f;
+  
+  m(1, 0) = 0.0f;
+  m(1, 1) = f;
+  m(1, 2) = 0.0f;
+  m(1, 3) = 0.0f;
+  
+  m(2, 0) = 0.0f;
+  m(2, 1) = 0.0f;
+  m(2, 2) = -((far_z + near_z) / (far_z - near_z));
+  m(2, 3) = -((2 * far_z * near_z) / (far_z - near_z));
+  
+  m(3, 0) = 0.0f;
+  m(3, 1) = 0.0f;
+  m(3, 2) = -1;
+  m(3, 3) = 0.0f;
+  return m;
+}
 
 void changeWindowSize(GLFWwindow* window,
                       const int width, const int height)
@@ -43,158 +51,90 @@ void changeWindowSize(GLFWwindow* window,
   glOrtho(-width * 0.5f, width * 0.5f, -height * 0.5f, height * 0.5f, -0.0f, 1.0f);
 }
 
-bool setupTexture(const GLuint id, const char* file) {
-  std::ifstream fstr(file, std::ios::binary);
-  
-  // 処理を中断
-  if (!fstr) return false;
-  
-  // ファイルサイズを取得
-  //  読み込み位置をファイル末尾へ移動
-  //  ->ファイル先頭から読み込み位置までのオフセット
-  //  =ファイルサイズ
-  const size_t file_size = static_cast<size_t>(fstr.seekg(0, fstr.end).tellg());
-  
-  // 読み込み位置をファイル先頭へ戻す
-  fstr.seekg(0, fstr.beg);
-  
-  // 動的配列を使ってファイルを読み込む場所を確保
-  // charをfile_size個、メモリに確保する
-  std::vector<char> texture_buffer(file_size);
-  
-  // 確保した場所へファイルの内容をすべて読み込む
-  fstr.read(&texture_buffer[0], file_size);
+void resize(GLFWwindow* window,
+            const int width, const int height) {
+  Width  = width;
+  Height = height;
+}
 
-  // OpenGLに
-  // 「これから、テクスチャ識別子idに対して指示を与えます」
-  // と指示
-  glBindTexture(GL_TEXTURE_2D, id);
+
+void view() {
+  // 透視変換を操作するお！と宣言
+  glMatrixMode(GL_PROJECTION);
+  // 正規行列を読み込む
+  glLoadIdentity();
   
-  // 1ピクセルに「赤、緑、青、α」の情報を持つ
-  // 幅256ピクセル、高さ256ピクセルの画像データをOpenGLへ転送
-  glTexImage2D(GL_TEXTURE_2D,
-               0, GL_RGBA, 256, 256,
-               0, GL_RGBA, GL_UNSIGNED_BYTE,
-               &texture_buffer[0]);
+  glViewport(0, 0, Width, Height);
   
-  // 画像が拡大された場合にどう振る舞うか指定
-  glTexParameteri(GL_TEXTURE_2D,
-                  GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+  // 透視変換行列を作成して適用
+  // glFrustum(GLdouble left, GLdouble right,
+  //           GLdouble bottom, GLdouble top,
+  //           GLdouble near, GLdouble far);
+  // 左端の座標、右端の座標
+  // 下端の座標、上端の座標
+  // 最前面までの距離、最前面までの距離(距離はどちらも/Users/yanai/Desktop/OpenGL2D0より大きい値)
+  /*glFrustum( -1,    1,
+   1,   -1,
+   0.5, 20.0);*/
   
-  // 画像が縮小された場合にどう振る舞うか指定
-  glTexParameteri(GL_TEXTURE_2D,
-                  GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+  // Eigenの行列をOpenGLに渡す
+  float aspect = Width / float(Height);
+  Eigen::Matrix4f m = perspectiveView(36, aspect, 0.5, 50);
+  glMultMatrixf(m.data());
   
-  return true;
+  // モデリング行列を操作するお！と宣言
+  glMatrixMode(GL_MODELVIEW);
+  // 正規行列を読み込む
+  glLoadIdentity();
 }
 
 int main() {
-  GLFWwindow* window;
+  if (!glfwInit()) return -1;
   
-  // Initialize the library
-  if (!glfwInit()) {
-    return -1;
-  }
+  GLFWwindow* window = glfwCreateWindow(Width, Height,
+                                        "08 Matrix",
+                                        nullptr, nullptr);
   
-  // Create a windowed mode window and its OpenGL
-  window = glfwCreateWindow(Width, Height, "Hello World", NULL, NULL);
   if (!window) {
     glfwTerminate();
     return -1;
   }
   
-  // Make the window`s context current
   glfwMakeContextCurrent(window);
   
-  // Windowのサイズが変更されたときに呼び出す関数
-  glfwSetWindowSizeCallback(window, changeWindowSize);
+  // Windowのサイズが変更された際に呼ばれる関数を設定
+  glfwSetWindowSizeCallback(window, resize);
   
-  // 「ビューポート変換」を指定
-  // glViewport(X座標, Y座標, 幅, 高さ)
-  // 画面左下からの座標(x, y)から
-  // (幅 * 高さ)ピクセルの領域を描画領域とする
-  glViewport(0, 0, Width, Height);
+  glfwSwapInterval(1);
   
-  // 「投影行列」を操作対象にする
-  glMatrixMode(GL_PROJECTION);
-  glLoadIdentity();
+  float angle = 0.0f;
   
-  // 単位行列を作り、現在の行列に掛け合わせる
-  glOrtho(-Width * 0.5f, Width * 0.5f, -Height * 0.5f, Height * 0.5f, -0.0f, 1.0f);
-  
-  
-  // OpenGLにテクスチャ識別子を1つ作ってもらう
-  GLuint texture_id;
-  glGenTextures(1, &texture_id);
-  
-  // 画像ファイルを読み込んで
-  // テクスチャ識別子に設定する
-  if (!setupTexture(texture_id, "res/image.raw")) {
-    // 画像の読み込みに失敗したら
-    // テクスチャ識別子を消去、GLFWの後始末をして終了
-    glDeleteTextures(1, &texture_id);
-    glfwTerminate();
-    return EXIT_FAILURE;
-  }
-  
-  // Loop until the user closes the window
   while (!glfwWindowShouldClose(window)) {
-    // 描画バッファを塗りつぶす色の成分を指定
-    glClearColor(0.0f, 0.0f, 1.0f, 0.0f);
-    
-    // 描画バッファを塗りつぶす
+    glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-    // 以降の描画はブレンディングを有効にすると
-    // OpenGLに指示
-    glEnable(GL_BLEND);
+    view();
     
-    // ブレンディングの計算方法を指示
-    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_CONSTANT_ALPHA);
+    glTranslatef(0.0f, 0.0f, -1.5f);
+    // 回転行列を適用
+    // angle: 回転量(単位:degrees)  一周360c
+    // x, y, z: 回転軸を表すベクトル(単位ベクトルでなくてよい)
+    glRotatef(angle, 0.0f, 1.0f, 0.0f);
+    angle += 1.0f;
     
-    static const int scale = 150;
-    static const int offset = 30;
+    drawCircle(Vec2f(0, 0), 5, 0.4, Color(1, 1, 1));
     
-    static const GLfloat vtx[2 * 2 * 3] = {
-      0.0f * scale, 0.433f * scale,
-      -0.5f * scale, -0.433f * scale,
-      0.5f * scale, -0.433f * scale,
-      
-      0.0f * scale + offset, 0.433f * scale + offset,
-      -0.5f * scale + offset, -0.433f * scale + offset,
-      0.5f * scale + offset, -0.433f * scale + offset
-    };
-    glVertexPointer(2, GL_FLOAT, 0, vtx);
+    view();
     
-    GLfloat color[] = {
-      1.0f, 0.4f, 0.4f, 1.0f,
-      0.4f, 1.0f, 0.4f, 1.0f,
-      0.4f, 0.4f, 1.0f, 1.0f,
-      
-      0.4f, 1.0f, 0.4f, 1.0f,
-      0.4f, 0.4f, 1.0f, 0.0f,
-      1.0f, 0.4f, 0.4f, 0.0f
-    };
-    glColorPointer(4, GL_FLOAT, 0, color);
+    glTranslatef(0.0f, 0.0f, -1.5f);
+    drawCircle(Vec2f(0, 0), 5, 0.2, Color(0, 0, 1));
     
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glEnableClientState(GL_COLOR_ARRAY);
-    
-    glDrawArrays(GL_TRIANGLES, 0, 6);
-    
-    glDisableClientState(GL_VERTEX_ARRAY);
-    glDisableClientState(GL_COLOR_ARRAY);
-    
-    // Swap front and back buffers
     glfwSwapBuffers(window);
     
-    // Poll for and process events
     glfwPollEvents();
   }
   
-  // 使い終わったテクスチャ識別子を削除
-  glDeleteTextures(1, &texture_id);
-  
   glfwTerminate();
+  
   return 0;
 }

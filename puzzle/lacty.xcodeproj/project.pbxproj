@@ -1,0 +1,535 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		AC46DB281BEB742500261371 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB271BEB742500261371 /* OpenGL.framework */; };
+		AC46DB2A1BEB742C00261371 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB291BEB742C00261371 /* Cocoa.framework */; };
+		AC46DB2C1BEB743400261371 /* IOKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2B1BEB743400261371 /* IOKit.framework */; };
+		AC46DB2E1BEB743D00261371 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2D1BEB743D00261371 /* CoreVideo.framework */; };
+		AC46DB301BEB744800261371 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2F1BEB744800261371 /* libglfw3.a */; };
+		AC46DB341BEB757900261371 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC46DB321BEB757900261371 /* main.cpp */; };
+		AC5873E91C05777000D40AE6 /* Graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC5873E71C05777000D40AE6 /* Graphic.cpp */; };
+		ACAE91E91C180EE10008B83E /* Mouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE91E71C180EE10008B83E /* Mouse.cpp */; };
+		ACAE91F61C181C920008B83E /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE91F51C181C920008B83E /* Window.cpp */; };
+		ACAE91FC1C18341B0008B83E /* AppBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE91FA1C18341B0008B83E /* AppBase.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AC46DB0B1BEB712800261371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC46DAEC1BEB712800261371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC46DAF31BEB712800261371;
+			remoteInfo = lacty;
+		};
+		AC46DB161BEB712800261371 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AC46DAEC1BEB712800261371 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AC46DAF31BEB712800261371;
+			remoteInfo = lacty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		AC46DAF41BEB712800261371 /* lacty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = lacty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC46DB051BEB712800261371 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AC46DB0A1BEB712800261371 /* lactyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lactyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC46DB151BEB712800261371 /* lactyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = lactyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC46DB271BEB742500261371 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		AC46DB291BEB742C00261371 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		AC46DB2B1BEB743400261371 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
+		AC46DB2D1BEB743D00261371 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
+		AC46DB2F1BEB744800261371 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
+		AC46DB321BEB757900261371 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AC5873DD1C05735100D40AE6 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		AC5873DF1C05735100D40AE6 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		AC5873E11C0573AD00D40AE6 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphic.h; sourceTree = "<group>"; };
+		AC5873E71C05777000D40AE6 /* Graphic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphic.cpp; sourceTree = "<group>"; };
+		ACAE91E61C180E760008B83E /* Mouse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Mouse.h; sourceTree = "<group>"; };
+		ACAE91E71C180EE10008B83E /* Mouse.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Mouse.cpp; sourceTree = "<group>"; };
+		ACAE91F41C181C840008B83E /* Window.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Window.h; sourceTree = "<group>"; };
+		ACAE91F51C181C920008B83E /* Window.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Window.cpp; sourceTree = "<group>"; };
+		ACAE91FA1C18341B0008B83E /* AppBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppBase.cpp; sourceTree = "<group>"; };
+		ACAE91FD1C18342B0008B83E /* AppBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBase.h; sourceTree = "<group>"; };
+		ACAE92021C183DF80008B83E /* Application.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Application.hpp; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC46DAF11BEB712800261371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC46DB301BEB744800261371 /* libglfw3.a in Frameworks */,
+				AC46DB2E1BEB743D00261371 /* CoreVideo.framework in Frameworks */,
+				AC46DB2C1BEB743400261371 /* IOKit.framework in Frameworks */,
+				AC46DB2A1BEB742C00261371 /* Cocoa.framework in Frameworks */,
+				AC46DB281BEB742500261371 /* OpenGL.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC46DB071BEB712800261371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC46DB121BEB712800261371 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		AC46DAEB1BEB712800261371 = {
+			isa = PBXGroup;
+			children = (
+				AC5873DC1C05735100D40AE6 /* Lacty */,
+				AC46DB2F1BEB744800261371 /* libglfw3.a */,
+				AC46DB2D1BEB743D00261371 /* CoreVideo.framework */,
+				AC46DB2B1BEB743400261371 /* IOKit.framework */,
+				AC46DB291BEB742C00261371 /* Cocoa.framework */,
+				AC46DB271BEB742500261371 /* OpenGL.framework */,
+				AC46DAF61BEB712800261371 /* lacty */,
+				AC46DAF51BEB712800261371 /* Products */,
+				AC46DB311BEB756C00261371 /* src */,
+			);
+			sourceTree = "<group>";
+		};
+		AC46DAF51BEB712800261371 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC46DAF41BEB712800261371 /* lacty.app */,
+				AC46DB0A1BEB712800261371 /* lactyTests.xctest */,
+				AC46DB151BEB712800261371 /* lactyUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		AC46DAF61BEB712800261371 /* lacty */ = {
+			isa = PBXGroup;
+			children = (
+				AC46DB051BEB712800261371 /* Info.plist */,
+			);
+			path = lacty;
+			sourceTree = "<group>";
+		};
+		AC46DB311BEB756C00261371 /* src */ = {
+			isa = PBXGroup;
+			children = (
+				AC5873E31C05751100D40AE6 /* lib */,
+				AC46DB321BEB757900261371 /* main.cpp */,
+				ACAE92021C183DF80008B83E /* Application.hpp */,
+			);
+			path = src;
+			sourceTree = "<group>";
+		};
+		AC5873DC1C05735100D40AE6 /* Lacty */ = {
+			isa = PBXGroup;
+			children = (
+				AC5873DD1C05735100D40AE6 /* Color.h */,
+				AC5873DF1C05735100D40AE6 /* Vector.h */,
+				AC5873E11C0573AD00D40AE6 /* Graphic.h */,
+				ACAE91E61C180E760008B83E /* Mouse.h */,
+				ACAE91F41C181C840008B83E /* Window.h */,
+				ACAE91FD1C18342B0008B83E /* AppBase.h */,
+			);
+			name = Lacty;
+			path = include/Lacty;
+			sourceTree = "<group>";
+		};
+		AC5873E31C05751100D40AE6 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				AC5873E71C05777000D40AE6 /* Graphic.cpp */,
+				ACAE91E71C180EE10008B83E /* Mouse.cpp */,
+				ACAE91F51C181C920008B83E /* Window.cpp */,
+				ACAE91FA1C18341B0008B83E /* AppBase.cpp */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC46DAF31BEB712800261371 /* lacty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC46DB1E1BEB712800261371 /* Build configuration list for PBXNativeTarget "lacty" */;
+			buildPhases = (
+				AC46DAF01BEB712800261371 /* Sources */,
+				AC46DAF11BEB712800261371 /* Frameworks */,
+				AC46DAF21BEB712800261371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = lacty;
+			productName = lacty;
+			productReference = AC46DAF41BEB712800261371 /* lacty.app */;
+			productType = "com.apple.product-type.application";
+		};
+		AC46DB091BEB712800261371 /* lactyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC46DB211BEB712800261371 /* Build configuration list for PBXNativeTarget "lactyTests" */;
+			buildPhases = (
+				AC46DB061BEB712800261371 /* Sources */,
+				AC46DB071BEB712800261371 /* Frameworks */,
+				AC46DB081BEB712800261371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC46DB0C1BEB712800261371 /* PBXTargetDependency */,
+			);
+			name = lactyTests;
+			productName = lactyTests;
+			productReference = AC46DB0A1BEB712800261371 /* lactyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		AC46DB141BEB712800261371 /* lactyUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC46DB241BEB712800261371 /* Build configuration list for PBXNativeTarget "lactyUITests" */;
+			buildPhases = (
+				AC46DB111BEB712800261371 /* Sources */,
+				AC46DB121BEB712800261371 /* Frameworks */,
+				AC46DB131BEB712800261371 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				AC46DB171BEB712800261371 /* PBXTargetDependency */,
+			);
+			name = lactyUITests;
+			productName = lactyUITests;
+			productReference = AC46DB151BEB712800261371 /* lactyUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC46DAEC1BEB712800261371 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = Yanai;
+				TargetAttributes = {
+					AC46DAF31BEB712800261371 = {
+						CreatedOnToolsVersion = 7.1;
+					};
+					AC46DB091BEB712800261371 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = AC46DAF31BEB712800261371;
+					};
+					AC46DB141BEB712800261371 = {
+						CreatedOnToolsVersion = 7.1;
+						TestTargetID = AC46DAF31BEB712800261371;
+					};
+				};
+			};
+			buildConfigurationList = AC46DAEF1BEB712800261371 /* Build configuration list for PBXProject "lacty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC46DAEB1BEB712800261371;
+			productRefGroup = AC46DAF51BEB712800261371 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC46DAF31BEB712800261371 /* lacty */,
+				AC46DB091BEB712800261371 /* lactyTests */,
+				AC46DB141BEB712800261371 /* lactyUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC46DAF21BEB712800261371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC46DB081BEB712800261371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC46DB131BEB712800261371 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		AC46DAF01BEB712800261371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				ACAE91E91C180EE10008B83E /* Mouse.cpp in Sources */,
+				AC5873E91C05777000D40AE6 /* Graphic.cpp in Sources */,
+				AC46DB341BEB757900261371 /* main.cpp in Sources */,
+				ACAE91FC1C18341B0008B83E /* AppBase.cpp in Sources */,
+				ACAE91F61C181C920008B83E /* Window.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC46DB061BEB712800261371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC46DB111BEB712800261371 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AC46DB0C1BEB712800261371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC46DAF31BEB712800261371 /* lacty */;
+			targetProxy = AC46DB0B1BEB712800261371 /* PBXContainerItemProxy */;
+		};
+		AC46DB171BEB712800261371 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AC46DAF31BEB712800261371 /* lacty */;
+			targetProxy = AC46DB161BEB712800261371 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		AC46DB1C1BEB712800261371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		AC46DB1D1BEB712800261371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.10;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		AC46DB1F1BEB712800261371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
+				INFOPLIST_FILE = lacty/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lacty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		AC46DB201BEB712800261371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				COMBINE_HIDPI_IMAGES = YES;
+				HEADER_SEARCH_PATHS = include/;
+				INFOPLIST_FILE = lacty/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					OSX/lib,
+					"$(PROJECT_DIR)/OSX/lib",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.lacty;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		AC46DB221BEB712800261371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lactyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lactyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lacty.app/Contents/MacOS/lacty";
+			};
+			name = Debug;
+		};
+		AC46DB231BEB712800261371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lactyTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lactyTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/lacty.app/Contents/MacOS/lacty";
+			};
+			name = Release;
+		};
+		AC46DB251BEB712800261371 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lactyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lactyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = lacty;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		AC46DB261BEB712800261371 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				COMBINE_HIDPI_IMAGES = YES;
+				INFOPLIST_FILE = lactyUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.lactyUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = lacty;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC46DAEF1BEB712800261371 /* Build configuration list for PBXProject "lacty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC46DB1C1BEB712800261371 /* Debug */,
+				AC46DB1D1BEB712800261371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC46DB1E1BEB712800261371 /* Build configuration list for PBXNativeTarget "lacty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC46DB1F1BEB712800261371 /* Debug */,
+				AC46DB201BEB712800261371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC46DB211BEB712800261371 /* Build configuration list for PBXNativeTarget "lactyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC46DB221BEB712800261371 /* Debug */,
+				AC46DB231BEB712800261371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC46DB241BEB712800261371 /* Build configuration list for PBXNativeTarget "lactyUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC46DB251BEB712800261371 /* Debug */,
+				AC46DB261BEB712800261371 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC46DAEC1BEB712800261371 /* Project object */;
+}

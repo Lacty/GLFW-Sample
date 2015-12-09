@@ -13,6 +13,7 @@
 		AC46DB2E1BEB743D00261371 /* CoreVideo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2D1BEB743D00261371 /* CoreVideo.framework */; };
 		AC46DB301BEB744800261371 /* libglfw3.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AC46DB2F1BEB744800261371 /* libglfw3.a */; };
 		AC46DB341BEB757900261371 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC46DB321BEB757900261371 /* main.cpp */; };
+		AC5873E91C05777000D40AE6 /* Graphic.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC5873E71C05777000D40AE6 /* Graphic.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,10 @@
 		AC46DB2D1BEB743D00261371 /* CoreVideo.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreVideo.framework; path = System/Library/Frameworks/CoreVideo.framework; sourceTree = SDKROOT; };
 		AC46DB2F1BEB744800261371 /* libglfw3.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libglfw3.a; path = OSX/lib/libglfw3.a; sourceTree = "<group>"; };
 		AC46DB321BEB757900261371 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		AC5873DD1C05735100D40AE6 /* Color.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Color.h; sourceTree = "<group>"; };
+		AC5873DF1C05735100D40AE6 /* Vector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Vector.h; sourceTree = "<group>"; };
+		AC5873E11C0573AD00D40AE6 /* Graphic.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Graphic.h; sourceTree = "<group>"; };
+		AC5873E71C05777000D40AE6 /* Graphic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Graphic.cpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +83,7 @@
 		AC46DAEB1BEB712800261371 = {
 			isa = PBXGroup;
 			children = (
+				AC5873DC1C05735100D40AE6 /* Lacty */,
 				AC46DB2F1BEB744800261371 /* libglfw3.a */,
 				AC46DB2D1BEB743D00261371 /* CoreVideo.framework */,
 				AC46DB2B1BEB743400261371 /* IOKit.framework */,
@@ -110,9 +116,29 @@
 		AC46DB311BEB756C00261371 /* src */ = {
 			isa = PBXGroup;
 			children = (
+				AC5873E31C05751100D40AE6 /* lib */,
 				AC46DB321BEB757900261371 /* main.cpp */,
 			);
 			path = src;
+			sourceTree = "<group>";
+		};
+		AC5873DC1C05735100D40AE6 /* Lacty */ = {
+			isa = PBXGroup;
+			children = (
+				AC5873DD1C05735100D40AE6 /* Color.h */,
+				AC5873DF1C05735100D40AE6 /* Vector.h */,
+				AC5873E11C0573AD00D40AE6 /* Graphic.h */,
+			);
+			name = Lacty;
+			path = include/Lacty;
+			sourceTree = "<group>";
+		};
+		AC5873E31C05751100D40AE6 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				AC5873E71C05777000D40AE6 /* Graphic.cpp */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +268,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AC5873E91C05777000D40AE6 /* Graphic.cpp in Sources */,
 				AC46DB341BEB757900261371 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -359,6 +386,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = lacty/Info.plist;
@@ -376,6 +404,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				COMBINE_HIDPI_IMAGES = YES;
 				HEADER_SEARCH_PATHS = include/;
 				INFOPLIST_FILE = lacty/Info.plist;
