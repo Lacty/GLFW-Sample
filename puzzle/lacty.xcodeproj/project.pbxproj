@@ -17,8 +17,7 @@
 		ACAE91E91C180EE10008B83E /* Mouse.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE91E71C180EE10008B83E /* Mouse.cpp */; };
 		ACAE91F61C181C920008B83E /* Window.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE91F51C181C920008B83E /* Window.cpp */; };
 		ACAE91FC1C18341B0008B83E /* AppBase.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAE91FA1C18341B0008B83E /* AppBase.cpp */; };
-		ACFD00B41C211D020098F2C7 /* Puzzle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD00B21C211D020098F2C7 /* Puzzle.cpp */; };
-		ACFD00B71C2127360098F2C7 /* Cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD00B51C2127360098F2C7 /* Cell.cpp */; };
+		ACFD00BA1C2170630098F2C7 /* Cell.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACFD00B81C2170630098F2C7 /* Cell.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,10 +59,8 @@
 		ACAE91FA1C18341B0008B83E /* AppBase.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AppBase.cpp; sourceTree = "<group>"; };
 		ACAE91FD1C18342B0008B83E /* AppBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppBase.h; sourceTree = "<group>"; };
 		ACAE92021C183DF80008B83E /* Application.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Application.hpp; sourceTree = "<group>"; };
-		ACFD00B21C211D020098F2C7 /* Puzzle.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Puzzle.cpp; sourceTree = "<group>"; };
-		ACFD00B31C211D020098F2C7 /* Puzzle.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Puzzle.hpp; sourceTree = "<group>"; };
-		ACFD00B51C2127360098F2C7 /* Cell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cell.cpp; sourceTree = "<group>"; };
-		ACFD00B61C2127360098F2C7 /* Cell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cell.hpp; sourceTree = "<group>"; };
+		ACFD00B81C2170630098F2C7 /* Cell.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Cell.cpp; sourceTree = "<group>"; };
+		ACFD00B91C2170630098F2C7 /* Cell.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Cell.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,10 +132,8 @@
 				AC5873E31C05751100D40AE6 /* lib */,
 				AC46DB321BEB757900261371 /* main.cpp */,
 				ACAE92021C183DF80008B83E /* Application.hpp */,
-				ACFD00B21C211D020098F2C7 /* Puzzle.cpp */,
-				ACFD00B31C211D020098F2C7 /* Puzzle.hpp */,
-				ACFD00B51C2127360098F2C7 /* Cell.cpp */,
-				ACFD00B61C2127360098F2C7 /* Cell.hpp */,
+				ACFD00B81C2170630098F2C7 /* Cell.cpp */,
+				ACFD00B91C2170630098F2C7 /* Cell.hpp */,
 			);
 			path = src;
 			sourceTree = "<group>";
@@ -298,8 +293,7 @@
 				ACAE91E91C180EE10008B83E /* Mouse.cpp in Sources */,
 				AC5873E91C05777000D40AE6 /* Graphic.cpp in Sources */,
 				AC46DB341BEB757900261371 /* main.cpp in Sources */,
-				ACFD00B71C2127360098F2C7 /* Cell.cpp in Sources */,
-				ACFD00B41C211D020098F2C7 /* Puzzle.cpp in Sources */,
+				ACFD00BA1C2170630098F2C7 /* Cell.cpp in Sources */,
 				ACAE91FC1C18341B0008B83E /* AppBase.cpp in Sources */,
 				ACAE91F61C181C920008B83E /* Window.cpp in Sources */,
 			);
