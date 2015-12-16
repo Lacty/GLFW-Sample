@@ -15,6 +15,7 @@ public:
   Vec2(const Vec2<T>& src) : x(src.x), y(src.y) {}
 
   static Vec2<T> zero() { return Vec2<T>(0, 0); }
+  static Vec2<T> one() { return Vec2<T>(1, 1); }
   static Vec2<T> xAxis() { return Vec2<T>(1, 0); }
   static Vec2<T> yAxis() { return Vec2<T>(0, 1); }
 
@@ -31,6 +32,11 @@ public:
   Vec2<T>& operator*=(const Vec2<T>& rhs) {
     x *= rhs.x;
     y *= rhs.y;
+    return *this;
+  }
+  Vec2<T>& operator*(T rhs) {
+    x *= rhs;
+    y *= rhs;
     return *this;
   }
 };
