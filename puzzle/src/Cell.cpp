@@ -35,5 +35,8 @@ lacty::Color Cell::getColor() {
 void Cell::update() {}
 
 void Cell::draw() {
-  lacty::drawPoint(lacty::Vec2f(pos.x, pos.y), size, color);
+  lacty::Vec2f p(pos.x * size, pos.y * size);
+  p.x += size * 0.5f;
+  p.y += size * 0.5f;
+  lacty::drawPoint(p, size, color);
 }

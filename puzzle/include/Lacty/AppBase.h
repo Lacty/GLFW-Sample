@@ -24,6 +24,9 @@ protected:
   bool isPull(lacty::MouseButton button);
   bool isPress(lacty::MouseButton button);
   
+  int getWindowWidth();
+  int getWindowHeight();
+
   void setBackGround(lacty::ColorA color);
 
 public:

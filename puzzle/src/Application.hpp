@@ -2,16 +2,15 @@
 #pragma once
 #include "../include/Lacty/AppBase.h"
 #include "../include/Lacty/Vector.h"
+#include "Puzzle.hpp"
 #include <iostream>
-
-#include "Cell.hpp"
 
 
 using namespace lacty;
 
 class Application : public AppBase {
 private:
-  Cell cell;
+  Puzzle game;
 
 public:
   void setup();
@@ -20,11 +19,13 @@ public:
 };
 
 void Application::setup() {
-  cell = Cell(1, lacty::Vec2i(1, 0), 100.0f);
+  game = Puzzle(getWindowWidth(), getWindowHeight(), 4);
 }
 
-void Application::update() {}
+void Application::update() {
+  game.update();
+}
 
 void Application::draw() {
-  cell.draw();
+  game.draw();
 }

@@ -3,6 +3,19 @@
 #include <iostream>
 
 
+int Global_Window_Width;
+int Global_Window_Height;
+
+void changeWindowSize(GLFWwindow* window,
+                      const int width, const int height)
+{
+  Global_Window_Width = width;
+  Global_Window_Height = height;
+  glViewport(0, 0, width, height);
+  glLoadIdentity();
+  glOrtho(0.0f, width, 0.0f, height, -0.0f, 1.0f);
+}
+
 AppBase::AppBase() :
 gl_window(nullptr),
 background(lacty::ColorA::gray())
@@ -30,7 +43,9 @@ void AppBase::setBackGround(lacty::ColorA color) {
 void AppBase::setup() {
   if (!glfwInit()) exit(-1);
   
-  window = lacty::Window(lacty::Vec2i(640, 480));
+  window = lacty::Window(lacty::Vec2i(512, 512));
+  Global_Window_Width = window.getWidth();
+  Global_Window_Height = window.getHeight();
   
   gl_window = glfwCreateWindow(window.getWidth(),
                                window.getHeight(),
@@ -42,12 +57,28 @@ void AppBase::setup() {
   }
   
   glfwMakeContextCurrent(gl_window);
-  
+  glfwSetWindowSizeCallback(gl_window, changeWindowSize);
+
+  glViewport(0, 0, window.getWidth(), window.getHeight());
+  glLoadIdentity();
+  glOrtho(0.0f, window.getWidth(), 0.0f, window.getHeight(), -0.0f, 1.0f);
+
   mouse = lacty::Mouse(gl_window, &window);
 }
 
+int AppBase::getWindowWidth() {
+  return window.getWidth();
+}
+
+int AppBase::getWindowHeight() {
+  return window.getHeight();
+}
+
+
 void AppBase::update() {
   mouse.update();
+  window.setWidth(Global_Window_Width);
+  window.setHeight(Global_Window_Height);
 }
 
 void AppBase::draw() {}
