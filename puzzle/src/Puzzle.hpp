@@ -8,15 +8,23 @@
 
 #include "Cell.hpp"
 
+#include <vector>
+
 
 class Puzzle {
 private:
-  Cell cell;
+  std::vector<Cell> cells;
+  int Row;
+  int Column;
+  int CellNum;
+  int CellSize;
+  int Width;
+  int Height;
 
 public:
   Puzzle() = default;
-  Puzzle(int width, int height, int cellNum);
+  Puzzle(int width, int height, int column);
 
-  void update();
+  void update(bool isClick, const lacty::Vec2d& mp);
   void draw();
 };

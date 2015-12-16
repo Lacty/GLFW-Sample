@@ -23,7 +23,9 @@ protected:
   bool isPush(lacty::MouseButton button);
   bool isPull(lacty::MouseButton button);
   bool isPress(lacty::MouseButton button);
-  
+ 
+  lacty::Vec2d getMousePos();
+
   int getWindowWidth();
   int getWindowHeight();
 

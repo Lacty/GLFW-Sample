@@ -23,7 +23,7 @@ void Application::setup() {
 }
 
 void Application::update() {
-  game.update();
+  game.update(isPush(MouseButton::LEFT), getMousePos());
 }
 
 void Application::draw() {

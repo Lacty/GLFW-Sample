@@ -74,6 +74,9 @@ int AppBase::getWindowHeight() {
   return window.getHeight();
 }
 
+lacty::Vec2d AppBase::getMousePos() {
+  return mouse.getPos();
+}
 
 void AppBase::update() {
   mouse.update();
